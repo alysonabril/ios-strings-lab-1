@@ -145,10 +145,14 @@ print(String(characterToString))
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
 ```swift
-let letterA = "\u{41}"
-let characterA = "A"
+1.
+let eAcute = "un caf\u{E9}"
+let combinedEAcuteQuestion = "voulez vous un caf\u{65}\u{301}?"
+print(eAcuteQuestion)
+print(combinedEAcuteQuestion)
+print(eAcuteQuestion == combinedEAcuteQuestion)
 
-print(letterA == characterA)
+let acute = "\u{61}\u{301}"
 ```
 ***
 ## Question 9
@@ -240,8 +244,21 @@ Chess Board:
 You are given a string stored in the variable `aString`. Create new string named `replacedString` that contains the characters of the original string with all the occurrences of the character `"e"` replaced by `"\*"`.
 
 ```swift
-var aString = "Replace the letter e with \*"
-// Your code here
+//var aString = "Replace the letter e with \*"
+
+
+var aString = "Replace the letter e with *"
+var letterE:Character = "e"
+var replacedString = ""
+
+for char in aString {
+if char == letterE {
+replacedString.append("*")
+} else {
+replacedString.append(char)
+}
+}
+print(replacedString)
  ```
 
 Example:
@@ -258,10 +275,19 @@ Expected values:
 You are given a string stored in variable `aString`. Create a new string called `reverse` that contains the original string in reverse order. Print the reversed string.
 
 ```swift
+
 var aString = "this string has 29 characters"
 var reverse = ""
 
-// Your code here
+var aString = "this string has 29 characters"
+var reverse = ""
+
+for char in aString.reversed() {
+reverse.append(char)
+}
+print(reverse)
+
+
 ```
 
 Example:
@@ -277,9 +303,17 @@ Output:
 You are given a string stored in variable `aString`. Print `true` if `aString` is a palindrome, and `false` otherwise. A **palindrome** is a string which reads the same backward or forward.
 
 ```swift
-let aString = "anutforajaroftuna"
 
-// Your code here
+
+let aString = "anutforajaroftuna"
+let isPalindrome = String(aString.reversed())
+
+if aString == isPalindrome {
+print("true")
+} else {
+print("false")
+}
+
 ```
 
 Example 1:
@@ -302,9 +336,15 @@ Output:
 You are given a string stored in variable `problem`. Write code so that you print each word of the string on a new line.
 
 ```swift
-var problem = "split this string into words and print them on separate lines"
 
-// Your code
+var problem = "split this string into words and print them on separate lines"
+var newString = problem.components(separatedBy: " ")
+
+for element in newString {
+print(element)
+}
+
+
 ```
 
 Example:
@@ -334,7 +374,6 @@ You are given a string stored in variable `problem`. Write code that prints the 
 ```swift
 var problem = "find the longest word in the problem description"
 
-// Your code here
 ```
 
 Example:
