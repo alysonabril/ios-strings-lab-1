@@ -146,13 +146,35 @@ Build five pairs of **canonically equivalent** strings, the first of each being 
 
 ```swift
 1.
-let eAcute = "un caf\u{E9}"
-let combinedEAcuteQuestion = "voulez vous un caf\u{65}\u{301}?"
-print(eAcuteQuestion)
-print(combinedEAcuteQuestion)
-print(eAcuteQuestion == combinedEAcuteQuestion)
+let resumeAcute = "r\u{E9}sum\u{E9}"
+let combinedResumeAcute = "re\u{65}\u{301}sum\u{65}\u{301}"
 
-let acute = "\u{61}\u{301}"
+print(resumeAcute == resumeAcute)
+
+2.
+let apropoGraveA = "\u{61}\u{300}propos"
+let apropos = "\u{E0}propos"
+
+print(aproposAcuteA == apropos)
+
+3.
+let menuInSpanish = "men\u{F9}"
+let menuCombinedUnicode = "men\u{75}\u{300}"
+
+print(menuInSpanish == menuCombinedUnicode)
+
+4.
+let boyInFrench = "gar\u{E7}on"
+let combinedGarcon = "gar\u{63}\u{327}on"
+
+print(boyInFrench == combinedGarcon)
+
+5.
+let jalapeno = "jalape\u{F1}o"
+let jalapenoCombinedUnicode = "jalape\u{6E}\u{303}o"
+
+print(jalapeno == jalapenoCombinedUnicode)
+
 ```
 ***
 ## Question 9
@@ -372,7 +394,12 @@ lines
 You are given a string stored in variable `problem`. Write code that prints the longest word in the string.
 
 ```swift
+
 var problem = "find the longest word in the problem description"
+var newString = problem.components(separatedBy: " ")
+var longestWord = String(newString.max{$0.count < $1.count} ?? "nothing to see here")
+
+print(longestWord)
 
 ```
 
@@ -401,7 +428,15 @@ let input = "Count how many vowels I have!"
 
 Given a string of words separated by a `" "`. Write code that prints out the length of the last word.
 
-If there is no last word print out `"No last word"`.
+
+```swift
+
+var problem = "How are you doing this Monday?"
+var newString = problem.components(separatedBy: " ")
+var lastWord = String(newString.last ?? "no last word")
+
+print(lastWord.count)
+```
 
 Example:
 Input: `"How are you doing this Monday?"`
