@@ -13,21 +13,75 @@
 
 Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
+```swift
+var numberRange = 1...10
+var numbersIWantInAString = ""
+
+for i in numberRange  {
+numbersIWantInAString.append(String(i))
+
+if i != 10 {
+numbersIWantInAString.append(", ")
+}
+}
+
+print(numbersIWantInAString)
+
+```
 
 ***
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
+```swift
+var numberRange = 5...51
+var numbersIWantInAString = ""
 
+for i in numberRange  {
+
+if i % 2 == 0 {
+numbersIWantInAString.append(String(i))
+numbersIWantInAString.append(" ")
+}
+}
+
+print(numbersIWantInAString)
+
+```
 ***
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
+```swift
+var numberRange = 1...60
+var numbersIWantInAString = ""
+
+for i in numberRange  {
+
+if i % 10 == 4 {
+numbersIWantInAString.append(String(i))
+numbersIWantInAString.append(" ")
+}
+}
+
+print(numbersIWantInAString)
+
+```
+
 ***
 ## Question 4
 
 Print each character in the string `"Hello world!"`
+
+```swift
+Print each character in the string `"Hello world!"`
+var stringToIterate = "Hello world!"
+
+for character in stringToIterate {
+print(character)
+}
+```
 
 ***
 ## Question 5
@@ -36,12 +90,43 @@ Print out the last character in the string below.  You cannot use the Character 
 
 `let myStringSeven = "Hello world!"`
 
+
+```swift
+let myStringSeven = "Hello world!"
+let specialCharacter: Character = "!"
+
+for char in myStringSeven {
+if char != specialCharacter {
+print(char)
+}
+}
+```
+
 ***
 ## Question 6
 
 Write code that switches on a string, given the following conditions:
 - If the string's length is even, print out every character.
 - If the string's length is odd, print out every other character.
+
+```swift
+let testString = "hello"
+
+switch testString.count % 2  {
+case 0 :
+for letter in testString {
+print(letter, terminator: "")
+}
+default :
+for index in 0...testString.count - 1 {
+if index % 2 != 0 {
+let currentIndex = testString.index(testString.startIndex, offsetBy: index)
+print(testString[currentIndex], terminator : " ")
+}
+}
+}
+
+```
 
 ***
 ## Question 7
