@@ -260,6 +260,27 @@ Chess Board:
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
 
+```swift
+var whitePawn = String(repeating: "\u{2659}", count: 8)
+var whiteRookKnightBishop = "\u{2656}\u{2658}\u{2657}"
+var whiteKingQueen:String = "\u{2655}\u{2654}"
+
+var blackPawn = String(repeating: "\u{265F}", count: 8)
+var blackRookKnightBishop = "\u{265C}\u{265E}\u{265D}"
+var blackKingQueen:String = "\u{265A}\u{265B}"
+
+print("""
+\(whiteRookKnightBishop)\(whiteKingQueen)\(String(whiteRookKnightBishop.reversed()))
+\(whitePawn)
+
+
+
+
+\(blackPawn)
+\(blackRookKnightBishop)\(blackKingQueen)\(String(blackRookKnightBishop.reversed()))
+""")
+```
+
 ***
 ## Question 14
 
