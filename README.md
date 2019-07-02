@@ -133,26 +133,56 @@ print(testString[currentIndex], terminator : " ")
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
+```swift
+
+let characterToString: Character = "a"
+print(String(characterToString))
+```
+
 ***
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+```swift
+let letterA = "\u{41}"
+let characterA = "A"
+
+print(letterA == characterA)
+```
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
 
+```swift
+
+let unicodeHello = "\u{48}\u{45}\u{4C}\u{4C}\u{4F}\u{20}"
+let unicodeWorld = "\u{57}\u{4F}\u{52}\u{4C}\u{44}\u{21}"
+
+print(unicodeHello + unicodeWorld)
+
+```
+
+
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
-
+```swift
+let myFirstName = "\u{41}\u{6C}\u{79}\u{73}\u{6F}\u{6E}"
+print(myFirstName)
+```
 ***
 ## Question 11
 
 **Using only Unicode**, print out `"HELLO WORLD!"` in another language.
+```swift
+let unicodeHola = "\u{48}\u{4F}\u{4C}\u{41}\u{20}"
+let unicodeMundo = "\u{4D}\u{55}\u{4E}\u{44}\u{4F}\u{21}"
 
+print(unicodeHola + unicodeMundo)
+```
 ***
 ## Question 12
 
@@ -174,6 +204,17 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
+
+
+
+let horizontalLines = String(repeating: "- ", count: 11)
+let flowerUnicodeAndVerticalLines = String(repeating: "| \u{2698} ", count: 5)
+
+print(dashForBoxes)
+for _ in 0...7 {
+print("\(flowerUnicodeAndVerticalLines)|")
+}
+print(dashForBoxes)
 ```
 
 ***
